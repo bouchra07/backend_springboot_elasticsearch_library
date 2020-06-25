@@ -11,7 +11,8 @@ public interface IBookService {
     List<BookDTO> findAll();
     List<BookDTO> deleteAll();
     //String deleteById(Long id);
-	String deleteById(int id);
+	String deleteById(Long id);
 	Book updateBook(Book book);
-    
+	Book up(BookDTO bookDTO);
+	
 }

@@ -48,8 +48,8 @@ public class BookService implements IBookService {
 	}
 
 	@Override
-	public String deleteById(int id) {
-	       bookDAO.deleteById((long) id);
+	public String deleteById(Long id) {
+	       bookDAO.deleteById(id);
 	        return "book removed !! " + id;
 	    }
 
@@ -65,6 +65,17 @@ public class BookService implements IBookService {
 		
 	}
 
+	@Override
+	public Book up(BookDTO bookDTO) {
+		// TODO Auto-generated method stub
+		Book existingBook =bookDAO.findById(bookDTO.getId()).orElse(null);
+		existingBook.setName(bookDTO.getName());
+		existingBook.setCategory(bookDTO.getCategory());
+		existingBook.setDetail(bookDTO.getDetail());
+		existingBook.setThumbnail(bookDTO.getThumbnail());
+        return bookDAO.save(existingBook);
+		
+	}
 	
 	
    

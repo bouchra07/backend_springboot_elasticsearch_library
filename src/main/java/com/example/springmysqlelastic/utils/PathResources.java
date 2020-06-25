@@ -15,4 +15,6 @@ public final class PathResources {
 	public static final String delete_ALL = "/delete-all";
 	public static final String DELETE_ONE = "/delete-one";
 	public static final String UPDATE = "/update";
+	public static final String UP = "/update1";
+	
 }
